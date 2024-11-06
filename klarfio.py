@@ -314,13 +314,13 @@ class klarf_v1_8(object):
 
     def get_LotIDs(self):
         keys = self.data['FileRecord_1.8'].keys()
-        LotIDs = [key for key in keys if key.starswith("LotRecord")]
+        LotIDs = [key for key in keys if key.startswith("LotRecord")]
         LotIDs = [key.split("LotRecord_")[-1] for key in LotIDs]
         return LotIDs
     
     def get_WaferIDs(self,LotID=None):
         keys = self.data['FileRecord_1.8'][f'LotRecord_{LotID}'].keys()
-        WaferIDs = [key for key in keys if key.starswith("WaferRecord")]
+        WaferIDs = [key for key in keys if key.startswith("WaferRecord")]
         WaferIDs = [key.split("WaferRecord_")[-1] for key in WaferIDs]
         return WaferIDs    
     
